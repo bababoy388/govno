@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block title %}Профиль — CollabSpace{% endblock %}
+{% block content %}
+<section class="profile-page shell"><div class="eyebrow">ВАШ АККАУНТ</div><h1>Профиль <span class="gradient-text">участника</span></h1><p class="muted">Основная информация о вашей учётной записи.</p>
+<div class="profile-layout"><div class="profile-card"><div class="profile-avatar">{{ user.username[:1]|upper }}</div><h2>{{ user.username }}</h2><span class="member-badge"><span class="live-dot"></span> Участник CollabSpace</span><div class="profile-stats"><div><strong>{{ document_count }}</strong><span>Документов</span></div><div><strong>∞</strong><span>Идей впереди</span></div></div></div>
+<div class="settings-card"><div class="settings-heading"><div class="feature-icon icon-lilac">◎</div><div><h3>Личные данные</h3><p class="muted">Информация вашей учётной записи</p></div></div><div class="setting-row"><span>Имя пользователя</span><strong>{{ user.username }}</strong></div><div class="setting-row"><span>Электронная почта</span><strong>{{ user.email }}</strong></div><div class="setting-row"><span>Дата регистрации</span><strong>{{ user.created_at[:10] }}</strong></div><div class="settings-note">Ваши документы хранятся в локальной базе данных проекта.</div><a class="btn btn-outline" href="/dashboard">← К моим документам</a></div></div></section>
+{% endblock %}

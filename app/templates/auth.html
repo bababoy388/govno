@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}{{ 'Регистрация' if mode == 'register' else 'Вход' }} — CollabSpace{% endblock %}
+{% block content %}
+<section class="auth-wrap shell">
+  <div class="auth-aside"><div class="eyebrow"><span class="pulse-dot"></span> ВАШЕ ПРОСТРАНСТВО ДЛЯ ИДЕЙ</div><h1>{{ 'Хорошие идеи' if mode == 'register' else 'С возвращением' }}<br><span class="gradient-text">{{ 'рождаются вместе.' if mode == 'register' else 'продолжим работу.' }}</span></h1><p>Одно пространство для мыслей, документов и совместного творчества.</p><div class="auth-quote"><div class="quote-mark">“</div><p>В одиночку можно сделать многое. Вместе — гораздо больше.</p><span>— Принцип CollabSpace</span></div></div>
+  <div class="auth-card"><div class="auth-card-top"><span class="auth-icon">✦</span><span class="tiny-label">{{ 'СОЗДАТЬ АККАУНТ' if mode == 'register' else 'РАДЫ ВАС ВИДЕТЬ' }}</span></div><h2>{{ 'Присоединяйтесь' if mode == 'register' else 'Войти в аккаунт' }}</h2><p class="muted">{{ 'Это займёт меньше минуты.' if mode == 'register' else 'Введите данные вашей учётной записи.' }}</p>
+  {% if error %}<div class="alert">{{ error }}</div>{% endif %}
+  <form method="post" class="form-stack">
+    {% if mode == 'register' %}<label>Имя пользователя<input name="username" required minlength="3" maxlength="32" placeholder="Например, alex" autocomplete="username"></label><label>Электронная почта<input type="email" name="email" required placeholder="you@example.com" autocomplete="email"></label>{% else %}<label>Имя пользователя или email<input name="identity" required placeholder="Ваш логин или email" autocomplete="username"></label>{% endif %}
+    <label>Пароль<input type="password" name="password" required minlength="{{ 8 if mode == 'register' else 1 }}" placeholder="{{ 'Минимум 8 символов' if mode == 'register' else 'Ваш пароль' }}" autocomplete="{{ 'new-password' if mode == 'register' else 'current-password' }}"></label>
+    <button class="btn btn-primary btn-large btn-full" type="submit">{{ 'Создать аккаунт' if mode == 'register' else 'Войти' }} <span>↗</span></button>
+  </form><div class="auth-switch">{{ 'Уже есть аккаунт?' if mode == 'register' else 'Впервые здесь?' }} <a href="{{ '/login' if mode == 'register' else '/register' }}">{{ 'Войти' if mode == 'register' else 'Создать аккаунт' }}</a></div><div class="secure-note">⌑ Ваши данные защищены и используются только для работы сервиса.</div></div>
+</section>
+{% endblock %}

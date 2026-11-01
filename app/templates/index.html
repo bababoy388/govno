@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}CollabSpace — совместная работа{% endblock %}
+{% block content %}
+<section class="hero shell">
+  <div class="hero-copy">
+    <div class="eyebrow"><span class="pulse-dot"></span> ВАШЕ ПРОСТРАНСТВО ДЛЯ ИДЕЙ</div>
+    <h1>Пишите вместе.<br><span class="gradient-text">Создавайте быстрее.</span></h1>
+    <p class="hero-lead">Документы, которые объединяют людей. Работайте над текстами в реальном времени, делитесь идеями и превращайте мысли в результат.</p>
+    <div class="hero-buttons"><a href="{{ '/dashboard' if user else '/register' }}" class="btn btn-primary btn-large">Создать документ <span>↗</span></a><a href="/about" class="btn btn-outline btn-large"><span class="play-icon">▶</span> Как это работает</a></div>
+    <div class="social-proof"><div class="avatar-stack"><span class="avatar av-a">А</span><span class="avatar av-b">М</span><span class="avatar av-c">И</span><span class="avatar av-d">+</span></div><div><strong>Одна команда — один результат</strong><small>Идеи становятся лучше вместе</small></div></div>
+  </div>
+  <div class="hero-visual">
+    <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+    <div class="editor-preview">
+      <div class="preview-top"><div class="window-dots"><i></i><i></i><i></i></div><span>План проекта.doc</span><span class="live-pill"><b></b> В сети</span></div>
+      <div class="preview-body"><div class="preview-label">РАБОЧЕЕ ПРОСТРАНСТВО</div><h3>Большие идеи<br>начинаются здесь<span class="cursor"></span></h3><p>Собираем мысли, обсуждаем детали и создаём что-то значимое — вместе.</p><div class="preview-rule"></div><div class="preview-line long"></div><div class="preview-line medium"></div><div class="preview-line short"></div><div class="collab-note"><span class="avatar av-b">М</span><span><b>Мария</b><small>редактирует документ</small></span><span class="typing">•••</span></div></div>
+    </div>
+    <div class="float-card float-top"><span class="float-icon purple">✦</span><span><b>В реальном времени</b><small>Каждая идея на виду</small></span></div>
+    <div class="float-card float-bottom"><span class="float-icon mint">✓</span><span><b>Всё сохранено</b><small>Ваш прогресс в безопасности</small></span></div>
+  </div>
+</section>
+<section class="metrics shell"><div><strong>01</strong><span>Общее пространство</span></div><div><strong>∞</strong><span>Идей для развития</span></div><div><strong>24/7</strong><span>Доступ к документам</span></div><div><strong>0</strong><span>Потерянных мыслей</span></div></section>
+<section class="features-section"><div class="shell"><div class="section-heading"><div class="eyebrow">МЕНЬШЕ РУТИНЫ — БОЛЬШЕ СОЗИДАНИЯ</div><h2>Всё необходимое для<br><span class="gradient-text">командной работы</span></h2><p>Простой инструмент, который помогает держать фокус на главном.</p></div>
+<div class="feature-grid">
+  <article class="feature-card"><div class="feature-icon icon-lilac">✎</div><h3>Живой редактор</h3><p>Работайте над одним документом одновременно. Изменения появляются у участников без перезагрузки страницы.</p><span class="feature-number">01</span></article>
+  <article class="feature-card"><div class="feature-icon icon-peach">↗</div><h3>Лёгкий обмен</h3><p>Приглашайте коллег по имени пользователя и продолжайте работу в едином пространстве.</p><span class="feature-number">02</span></article>
+  <article class="feature-card"><div class="feature-icon icon-mint">▣</div><h3>Ничего не теряется</h3><p>Текст автоматически сохраняется в базе данных, а документы доступны после повторного входа.</p><span class="feature-number">03</span></article>
+</div></div></section>
+<section class="cta-section shell"><div class="cta-card"><div><div class="eyebrow">ВАША СЛЕДУЮЩАЯ ИДЕЯ ЖДЁТ</div><h2>Начните создавать<br>вместе уже сегодня.</h2><p>Зарегистрируйтесь и откройте своё рабочее пространство.</p></div><a class="btn btn-light btn-large" href="{{ '/dashboard' if user else '/register' }}">Попробовать бесплатно <span>↗</span></a><div class="cta-decoration">C</div></div></section>
+{% endblock %}
